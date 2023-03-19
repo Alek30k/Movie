@@ -12,8 +12,11 @@ export interface MenuProps {
 export const Menu = ({ className }: MenuProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <div>
-                <img />
+            <div className={styles.logo}>
+                <img
+                    src="https://user-images.githubusercontent.com/101005998/226206349-363d1be5-a9bc-475b-8a33-f6fa4d32f965.png"
+                    className={styles.logoImg}
+                />
                 <span>Alemovie</span>
             </div>
         </div>
