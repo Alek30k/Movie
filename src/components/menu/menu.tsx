@@ -17,8 +17,10 @@ export const Menu = ({ className }: MenuProps) => {
                     src="https://user-images.githubusercontent.com/101005998/226206349-363d1be5-a9bc-475b-8a33-f6fa4d32f965.png"
                     className={styles.logoImg}
                 />
-                <span>Alemovie</span>
+                <span className={styles.logoText}>Alemovie</span>
             </div>
+            <span className={styles.title}>Sort By</span>
+            <hr className={styles.hr} />
         </div>
     );
 };
