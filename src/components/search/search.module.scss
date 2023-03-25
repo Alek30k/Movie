@@ -1,8 +1,24 @@
 .root {
+  display: flex;
+  justify-content: space-between;
 }
 .input {
   width: 50%;
   background-color: transparent;
   padding: 10px;
   font-size: 18px;
+  border: 0px solid black;
+}
+.button {
+  background-color: #d85757;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  background-attachment: scroll;
+  background-origin: padding-box;
+  background-clip: border-box;
+  color: white;
+  font-weight: 500;
+  padding: 15px;
 }
