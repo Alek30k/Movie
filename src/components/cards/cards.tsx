@@ -16,6 +16,13 @@ export const Cards = ({ className }: CardsProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
         </div>
     );
 };
