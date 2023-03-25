@@ -26,6 +26,15 @@ export const Menu = ({ className }: MenuProps) => {
                     </li>
                 ))}
             </ul>
+            <span className={styles.title}>Sort By</span>
+            <hr className={styles.hr} />
+            <ul className={styles.list}>
+                {sortBy.map((item) => (
+                    <li key={item} className={styles.listItem}>
+                        {item}
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };
