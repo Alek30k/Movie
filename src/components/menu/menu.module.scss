@@ -4,6 +4,9 @@
   background-color: #1a171e;
   color: #ffffff;
   padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .logo {
   height: 50px;
@@ -24,4 +27,5 @@
 .hr {
   height: 0px;
   border: 1px solid #f0f0ed;
+  width: 100%;
 }

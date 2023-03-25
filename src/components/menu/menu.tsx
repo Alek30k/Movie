@@ -21,6 +21,7 @@ export const Menu = ({ className }: MenuProps) => {
             </div>
             <span className={styles.title}>Sort By</span>
             <hr className={styles.hr} />
+            <ul />
         </div>
     );
 };
