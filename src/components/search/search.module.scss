@@ -1,6 +1,9 @@
 .root {
   display: flex;
   justify-content: space-between;
+  border: 2px solid #d3c9c9;
+  border-radius: 15px;
+  overflow: hidden;
 }
 .input {
   width: 50%;
@@ -8,6 +11,7 @@
   padding: 10px;
   font-size: 18px;
   border: 0px solid black;
+  text-align: start;
 }
 .button {
   background-color: #d85757;
