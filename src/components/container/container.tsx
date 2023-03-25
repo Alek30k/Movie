@@ -10,5 +10,5 @@ export interface ContainerProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-containers-and-templates
  */
 export const Container = ({ className }: ContainerProps) => {
-    return <div className={classNames(styles.root, className)}>Container</div>;
+    return <div className={classNames(styles.root, className)}></div>;
 };
