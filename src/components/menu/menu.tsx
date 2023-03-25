@@ -6,6 +6,7 @@ export interface MenuProps {
 }
 
 const sortBy: string[] = ['Popularity', 'Most Voted', 'Release Date'];
+const genres: string[] = ['Action', 'Comedy', 'Horror'];
 
 export const Menu = ({ className }: MenuProps) => {
     return (
@@ -26,10 +27,10 @@ export const Menu = ({ className }: MenuProps) => {
                     </li>
                 ))}
             </ul>
-            <span className={styles.title}>Sort By</span>
+            <span className={styles.title}>Genre</span>
             <hr className={styles.hr} />
             <ul className={styles.list}>
-                {sortBy.map((item) => (
+                {genres.map((item) => (
                     <li key={item} className={styles.listItem}>
                         {item}
                     </li>
