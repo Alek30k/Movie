@@ -21,8 +21,13 @@ export const FavoriteCard = ({ className, movie }: FavoriteCardProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <img />
-            <h1></h1>
-            <span>text</span>
+            <div>
+                <h1></h1>
+                <span>text</span>
+            </div>
+            <div>
+                <img />
+            </div>
         </div>
     );
 };
