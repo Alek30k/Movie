@@ -20,10 +20,10 @@ export interface FavoriteCardProps {
 export const FavoriteCard = ({ className, movie }: FavoriteCardProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <img />
+            <img src={movie.poster_path}/>
             <div>
-                <h1></h1>
-                <span>text</span>
+                <h1>{movie.title}</h1>
+                <span>{movie.vote_average}</span>
             </div>
             <div>
                 <img />
