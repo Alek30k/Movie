@@ -16,4 +16,7 @@ export default createBoard({
             }}
         />
     ),
+    environmentProps: {
+        canvasWidth: 100,
+    },
 });
