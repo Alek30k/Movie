@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Search } from '../search/search';
 import { Cards as Cards0 } from './cards';
 import { Card } from '../card/card';
+import { useState } from 'react';
 
 export interface CardsProps {
     className?: string;
@@ -13,6 +14,8 @@ export interface CardsProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-cardss-and-templates
  */
 export const Cards = ({ className }: CardsProps) => {
+    const [movies, setMovies] = useState([]);
+
     return (
         <div className={classNames(styles.root, className)}>
             <Card />
