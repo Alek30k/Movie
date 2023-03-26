@@ -3,20 +3,28 @@ import classNames from 'classnames';
 
 export interface CardProps {
     className?: string;
+    movie:{
+        id: string,
+        poster_path?: string,
+        title:string,
+        overview:string,
+        vote_average:number,
+        release_date:string
+    }
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-cards-and-templates
  */
-export const Card = ({ className }: CardProps) => {
+export const Card = ({ className, movie }: CardProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <img />
+            <img src={movie.poster_path}/>
             <div>
-                <h1 />
-                <span>text</span>
-                <p>This is a paragraph.</p>
+                <h1>{movie.title}</h1>
+                <span>{movie.vote_average}</span>
+                <p>{movie.overview}</p>
                 <button>Button</button>
             </div>
         </div>
