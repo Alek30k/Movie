@@ -20,13 +20,13 @@ export interface FavoriteCardProps {
 export const FavoriteCard = ({ className, movie }: FavoriteCardProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <img src={movie.poster_path}/>
-            <div>
-                <h1>{movie.title}</h1>
+            <img src={movie.poster_path} className={styles.fImg} />
+            <div className={styles.detail}>
+                <h1 className={styles.title}>{movie.title}</h1>
                 <span>{movie.vote_average}</span>
             </div>
-            <div>
-                <img />
+            <div className={styles.delete}>
+                <img src="https://i.imgur.com/oFxZf6r.png" />
             </div>
         </div>
     );
