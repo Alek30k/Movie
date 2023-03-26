@@ -17,7 +17,7 @@ export interface Movie {
 }
 
 export const Cards = ({ className }: CardsProps) => {
-    const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState<Movie[]>([]);
 
     useEffect(() => {
         fetch('https://api.themoviedb.org/3/movie/550?api_key=2c0383921b917af2bbb84d261d5ce099')
@@ -31,13 +31,6 @@ export const Cards = ({ className }: CardsProps) => {
             {movies.map((movie) => (
                 <Card key={movie.id} movie={movie} />
             ))}
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
         </div>
     );
 };
