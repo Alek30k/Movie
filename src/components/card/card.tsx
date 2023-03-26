@@ -24,7 +24,7 @@ export const Card = ({ className, movie }: CardProps) => {
             <div className={styles.detail}>
                 <h1>{movie.title}</h1>
                 <span className={styles.rating}>{movie.vote_average}</span>
-                <p className={styles.desc}>{movie.overview}</p>
+                <p className={styles.desc}>{movie.overview.substring(0,220)}</p>
                 <button className={styles.button}>+</button>
             </div>
         </div>

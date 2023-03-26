@@ -7,7 +7,8 @@ export default createBoard({
         <Card
             movie={{
                 id: '123',
-                overview: 'desc',
+                overview:
+                    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, cupiditate provident, ab at, quae ullam modi quis vero nam earum culpa commodi iure hic? Dolore quia totam perferendis fugit sed?',
                 release_date: '2000',
                 title: 'Avatar',
                 vote_average: 7,
