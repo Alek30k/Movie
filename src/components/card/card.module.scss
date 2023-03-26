@@ -19,8 +19,9 @@
   color: white;
   opacity: 0;
   &:hover {
-    opacity: 0.1;
+    opacity: 1;
   }
+  box-shadow: 3px 3px 2px black;
 }
 .rating {
   font-weight: 500;
