@@ -7,6 +7,15 @@ export interface CardsProps {
     className?: string;
 }
 
+export interface Movie {
+    id: string;
+    poster_path?: string;
+    title: string;
+    overview: string;
+    vote_average: number;
+    release_date: string;
+}
+
 export const Cards = ({ className }: CardsProps) => {
     const [movies, setMovies] = useState([]);
 
