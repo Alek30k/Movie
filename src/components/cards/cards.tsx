@@ -1,9 +1,7 @@
 import styles from './cards.module.scss';
 import classNames from 'classnames';
-import { Search } from '../search/search';
-import { Cards as Cards0 } from './cards';
 import { Card } from '../card/card';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export interface CardsProps {
     className?: string;
@@ -15,6 +13,13 @@ export interface CardsProps {
  */
 export const Cards = ({ className }: CardsProps) => {
     const [movies, setMovies] = useState([]);
+
+    useEffect(() => {
+        fetch('https://api.themoviedb.org/3/movie/550?api_key=2c0383921b917af2bbb84d261d5ce099')
+            .then((response) => response.json())
+            .then((data) => setMovies(data.results))
+            .catch((err) => console.log(err));
+    }, []);
 
     return (
         <div className={classNames(styles.root, className)}>
