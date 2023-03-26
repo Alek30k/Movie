@@ -33,4 +33,7 @@
   background-origin: padding-box;
   background-clip: border-box;
   opacity: 0;
+  &:hover {
+    opacity: 0.2;
+  }
 }
