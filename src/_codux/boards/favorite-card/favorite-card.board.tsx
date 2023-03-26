@@ -6,7 +6,7 @@ export default createBoard({
     Board: () => (
         <FavoriteCard
             movie={{
-                id: '43',
+                id: 43,
                 overview:
                     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque pariatur ducimus cumque sint eum totam ipsam repellat soluta exercitationem, quisquam, repellendus cupiditate doloribus voluptate quis delectus dignissimos a animi repudiandae!',
                 release_date: '2000',
