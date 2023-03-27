@@ -26,12 +26,14 @@ export const Cards = ({ className }: CardsProps) => {
 
     useEffect(() => {
         fetch(
-            `https://api.themoviedb.org/3/discover/movie?api_key=2c0383921b917af2bbb84d261d5ce099&sort_by=${sortBy}&with_genres=${genre}`
+            query !== ''
+                ? `https://api.themoviedb.org/3/search/movie?api_key=2c0383921b917af2bbb84d261d5ce099&query=${query}`
+                : `https://api.themoviedb.org/3/discover/movie?api_key=2c0383921b917af2bbb84d261d5ce099&sort_by=${sortBy}&with_genres=${genre}`
         )
             .then((response) => response.json())
             .then((data) => setMovies(data.results))
             .catch((err) => console.log(err));
-    }, [sortBy, genre]);
+    }, [sortBy, genre, query]);
 
     return (
         <div className={classNames(styles.root, className)}>
