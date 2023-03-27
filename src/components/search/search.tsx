@@ -14,11 +14,15 @@ export interface SearchProps {
 export const Search = ({ className }: SearchProps) => {
     const [, setInput] = useState('');
 
-    const { state } = useContext(SearchContext);
+    const { dispatch } = useContext(SearchContext);
 
     return (
         <div className={classNames(styles.root, className)}>
-            <input className={styles.input} placeholder="Search..." />
+            <input
+                className={styles.input}
+                placeholder="Search..."
+                onChange={(e) => setInput(e.target.value)}
+            />
             <button className={styles.button}>Search</button>
         </div>
     );
