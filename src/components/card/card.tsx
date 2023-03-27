@@ -20,7 +20,7 @@ export interface CardProps {
 export const Card = ({ className, movie }: CardProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <img src={movie.poster_path} className={styles.cardImg} />
+            <img src={`http://image.tndb.org/t/w500/${movie.poster_path}`} className={styles.cardImg} />
             <div className={styles.detail}>
                 <h1>{movie.title}</h1>
                 <span className={styles.rating}>{movie.vote_average}</span>
