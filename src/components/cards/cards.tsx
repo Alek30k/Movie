@@ -28,7 +28,7 @@ export const Cards = ({ className }: CardsProps) => {
 
     return (
         <div className={classNames(styles.root, className)}>
-            {movies.map((movie) => (
+            {movies?.map((movie) => (
                 <Card key={movie.id} movie={movie} />
             ))}
         </div>
