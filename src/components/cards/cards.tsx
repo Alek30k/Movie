@@ -2,7 +2,7 @@ import styles from './cards.module.scss';
 import classNames from 'classnames';
 import { Card } from '../card/card';
 import { useContext, useEffect, useState } from 'react';
-import { SearchContext } from '../../context/SearchContext1';
+import { SearchContext } from '../../context/SearchContext';
 
 export interface CardsProps {
     className?: string;
