@@ -1,6 +1,7 @@
 import styles from './card.module.scss';
 import classNames from 'classnames';
 import { useContext } from 'react';
+import { FavoriteContext } from '../../context/FavoriteContext';
 
 export interface CardProps {
     className?: string;
@@ -15,6 +16,8 @@ export interface CardProps {
 }
 
 export const Card = ({ className, movie }: CardProps) => {
+    const { dispatch } = useContext(FavoriteContext);
+
     return (
         <div className={classNames(styles.root, className)}>
             <img
@@ -25,7 +28,12 @@ export const Card = ({ className, movie }: CardProps) => {
                 <h1>{movie.title}</h1>
                 <span className={styles.rating}>{movie.vote_average}</span>
                 <p className={styles.desc}>{movie.overview.substring(0, 220)}</p>
-                <button className={styles.button}>+</button>
+                <button
+                    className={styles.button}
+                    onClick={() => dispatch({ type: 'ADD_MOVIE', payload: movie })}
+                >
+                    +
+                </button>
             </div>
         </div>
     );
