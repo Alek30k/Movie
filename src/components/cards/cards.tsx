@@ -31,7 +31,7 @@ export const Cards = ({ className }: CardsProps) => {
             .then((response) => response.json())
             .then((data) => setMovies(data.results))
             .catch((err) => console.log(err));
-    }, []);
+    }, [sortBy, genre]);
 
     return (
         <div className={classNames(styles.root, className)}>
