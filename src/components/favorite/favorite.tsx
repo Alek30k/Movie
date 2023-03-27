@@ -12,7 +12,7 @@ export interface FavoriteProps {
 export const Favorite = ({ className }: FavoriteProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <h1 />
+            <h1>Favorites</h1>
         </div>
     );
 };
