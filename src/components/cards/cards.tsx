@@ -1,7 +1,8 @@
 import styles from './cards.module.scss';
 import classNames from 'classnames';
 import { Card } from '../card/card';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { SearchContext } from '../../context/SearchContext1';
 
 export interface CardsProps {
     className?: string;
@@ -18,6 +19,10 @@ export interface Movie {
 
 export const Cards = ({ className }: CardsProps) => {
     const [movies, setMovies] = useState<Movie[]>([]);
+
+    const { state } = useContext(SearchContext);
+
+    const { sortBy, genre, query } = state;
 
     useEffect(() => {
         fetch(
