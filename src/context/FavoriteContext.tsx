@@ -27,7 +27,9 @@ const FavoriteReducer = (state: State, action: FavoriteAction) => {
         case 'ADD_MOVIE':
             return { favorites: [...state.favorites, action.payload] };
         case 'REMOVE_MOVIE':
-            return { favorites: [state.favorites.filter((item) => item.id !== action.payload.id)] };
+            return { favorites: [...state.favorites.filter((item) => item.id !== action.payload.id)] }
+            default:
+            return state
     }
 };
 
@@ -35,3 +37,12 @@ export const FavoriteContext = createContext<{
     state: State;
     dispatch: React.Dispatch<FavoriteAction>;
 }>({ state: INITIAL_STATE, dispatch: () => {} });
+
+
+interface ProviderProps {
+    children:React.ReactNode
+}
+
+export const FavoriteContextProvider = ({children}:ProviderProps)=>{
+        const [state,dispatch] = useReducer(FavoriteReducer,INITIAL_STATE);
+}
