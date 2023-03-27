@@ -35,8 +35,8 @@ export const Menu = ({ className }: MenuProps) => {
             <hr className={styles.hr} />
             <ul className={styles.list}>
                 {sortBy.map((item) => (
-                    <li key={item} className={styles.listItem}>
-                        {item}
+                    <li key={item.q} className={styles.listItem}>
+                        {item.text}
                     </li>
                 ))}
             </ul>
@@ -44,8 +44,8 @@ export const Menu = ({ className }: MenuProps) => {
             <hr className={styles.hr} />
             <ul className={styles.list}>
                 {genres.map((item) => (
-                    <li key={item} className={styles.listItem}>
-                        {item}
+                    <li key={item.id} className={styles.listItem}>
+                        {item.text}
                     </li>
                 ))}
             </ul>
