@@ -25,7 +25,7 @@ export const FavoriteCard = ({ className, movie }: FavoriteCardProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <img
-                src={`http://image.tmdb.org/t/w500/${movie.poster_path}`}
+                src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 className={styles.fImg}
             />
             <div className={styles.detail}>
