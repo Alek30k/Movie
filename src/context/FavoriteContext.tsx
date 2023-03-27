@@ -1,19 +1,39 @@
-export interface Movie {
-   
-        id: number;
-        poster_path?: string;
-        title: string;
-        overview: string;
-        vote_average: number;
-        release_date: string;
-   
+import React, { createContext, useReducer } from 'react';
+
+interface Movie {
+    id: number;
+    poster_path?: string;
+    title: string;
+    overview: string;
+    vote_average: number;
+    release_date: string;
 }
 
 interface State {
-   
         favorites: Movie[];
 }
 
-const INITIAL_STATE= {
-    favorites:[]
+interface FavoriteAction {
+    type: string,
+    payload:Movie
 }
+
+const INITIAL_STATE: State = {
+    favorites: [],
+};
+
+const FavoriteReducer = (state: State,action:FavoriteAction){
+        switch(action.type){
+                case "ADD_MOVIE":
+                        return {favorites:[...state.favorites, action.payload]}
+                case "REMOVE_MOVIE":
+                        return {favorites:[state.favorites.filter(item=>item.id !== action.payload.id)]}
+        }
+}
+
+export const FavoriteContext = createContext<{
+state:State,
+dispatch:React.Dispatch<FavoriteAction>
+}>({state:INITIAL_STATE,dispatch:()=>{}})
+
+
