@@ -3,7 +3,7 @@ import { Menu } from './components/menu/menu';
 import { Container } from './components/container/container';
 import { Favorite } from './components/favorite/favorite';
 import { FavoriteContextProvider } from './context/FavoriteContext';
-import { SearchContextProvider } from './context/SearchContext1';
+import { SearchContextProvider } from './context/SearchContext';
 
 function App() {
     return (

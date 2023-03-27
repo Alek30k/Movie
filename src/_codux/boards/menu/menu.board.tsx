@@ -3,5 +3,8 @@ import { Menu } from '../../../components/menu/menu';
 
 export default createBoard({
     name: 'Menu',
-    Board: () => <Menu />
+    Board: () => <Menu />,
+    environmentProps: {
+        windowHeight: 884,
+    },
 });

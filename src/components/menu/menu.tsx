@@ -39,7 +39,7 @@ export const Menu = ({ className }: MenuProps) => {
             <hr className={styles.hr} />
             <ul className={styles.list}>
                 {sortBy.map((item) => (
-                    <li key={item.q} className={styles.listItem}>
+                    <li key={item.q} className={styles.listItem} onClick={()=>dispatch({type:"SORT_BY", payload:item.q})}>
                         {item.text}
                     </li>
                 ))}
@@ -48,7 +48,7 @@ export const Menu = ({ className }: MenuProps) => {
             <hr className={styles.hr} />
             <ul className={styles.list}>
                 {genres.map((item) => (
-                    <li key={item.id} className={styles.listItem}>
+                    <li key={item.id} className={styles.listItem} onClick={()=>dispatch({type:"ADD_GENRE", payload:item.id})}>
                         {item.text}
                     </li>
                 ))}
