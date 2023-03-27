@@ -21,6 +21,10 @@ const SearchReducer = (state: State, action: SearchAction) => {
     switch (action.type) {
         case 'SORT_BY':
             return {...state, sortBy:action.payload}
+        case 'ADD_GENRE':
+            return {...state, genre:action.payload}
+        case 'ADD_QUERY':
+            return {...state, query:action.payload}
         default:
             return state;
     }
