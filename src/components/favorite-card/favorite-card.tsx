@@ -32,7 +32,10 @@ export const FavoriteCard = ({ className, movie }: FavoriteCardProps) => {
                 <h1 className={styles.title}>{movie.title}</h1>
                 <span>{movie.vote_average}</span>
             </div>
-            <div className={styles.delete}>
+            <div
+                className={styles.delete}
+                onClick={() => dispatch({ type: 'REMOVE_MOVIE', payload: movie })}
+            >
                 <img src="https://i.imgur.com/oFxZf6r.png" />
             </div>
         </div>
