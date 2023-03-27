@@ -12,7 +12,7 @@ export interface SearchProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-searchs-and-templates
  */
 export const Search = ({ className }: SearchProps) => {
-    const [, setInput] = useState('');
+    const [input, setInput] = useState('');
 
     const { dispatch } = useContext(SearchContext);
 
@@ -23,7 +23,12 @@ export const Search = ({ className }: SearchProps) => {
                 placeholder="Search..."
                 onChange={(e) => setInput(e.target.value)}
             />
-            <button className={styles.button}>Search</button>
+            <button
+                className={styles.button}
+                onClick={() => dispatch({ type: 'ADD_QUERY', payload: input })}
+            >
+                Search
+            </button>
         </div>
     );
 };
