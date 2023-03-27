@@ -1,9 +1,9 @@
 import React, { createContext, useReducer } from 'react';
 
 interface State {
-    sortBy:string;
-    genre:string;
-    query:string;
+    sortBy: string;
+    genre: string;
+    query: string;
 }
 
 interface SearchAction {
@@ -12,19 +12,19 @@ interface SearchAction {
 }
 
 const INITIAL_STATE: State = {
-      sortBy:"popularity.desc",
-    genre:"",
-    query:"",
+    sortBy: 'popularity.desc',
+    genre: '',
+    query: '',
 };
 
 const SearchReducer = (state: State, action: SearchAction) => {
     switch (action.type) {
         case 'SORT_BY':
-            return {...state, sortBy:action.payload}
+            return { ...state, sortBy: action.payload, query: '' };
         case 'ADD_GENRE':
-            return {...state, genre:action.payload}
+            return { ...state, genre: action.payload, query: '' };
         case 'ADD_QUERY':
-            return {...state, query:action.payload}
+            return { ...state, query: action.payload };
         default:
             return state;
     }
@@ -42,7 +42,5 @@ interface ProviderProps {
 export const SearchContextProvider = ({ children }: ProviderProps) => {
     const [state, dispatch] = useReducer(SearchReducer, INITIAL_STATE);
 
-    return (
-        <SearchContext.Provider value={{ state, dispatch }}>{children}</SearchContext.Provider>
-    );
+    return <SearchContext.Provider value={{ state, dispatch }}>{children}</SearchContext.Provider>;
 };
