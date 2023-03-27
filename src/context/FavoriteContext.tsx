@@ -10,30 +10,28 @@ interface Movie {
 }
 
 interface State {
-        favorites: Movie[];
+    favorites: Movie[];
 }
 
 interface FavoriteAction {
-    type: string,
-    payload:Movie
+    type: string;
+    payload: Movie;
 }
 
 const INITIAL_STATE: State = {
     favorites: [],
 };
 
-const FavoriteReducer = (state: State,action:FavoriteAction){
-        switch(action.type){
-                case "ADD_MOVIE":
-                        return {favorites:[...state.favorites, action.payload]}
-                case "REMOVE_MOVIE":
-                        return {favorites:[state.favorites.filter(item=>item.id !== action.payload.id)]}
-        }
-}
+const FavoriteReducer = (state: State, action: FavoriteAction) => {
+    switch (action.type) {
+        case 'ADD_MOVIE':
+            return { favorites: [...state.favorites, action.payload] };
+        case 'REMOVE_MOVIE':
+            return { favorites: [state.favorites.filter((item) => item.id !== action.payload.id)] };
+    }
+};
 
 export const FavoriteContext = createContext<{
-state:State,
-dispatch:React.Dispatch<FavoriteAction>
-}>({state:INITIAL_STATE,dispatch:()=>{}})
-
-
+    state: State;
+    dispatch: React.Dispatch<FavoriteAction>;
+}>({ state: INITIAL_STATE, dispatch: () => {} });
